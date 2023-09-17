@@ -1,3 +1,5 @@
+using MiddleWares_Samples;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,6 +15,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseSaveUserInfo();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -23,5 +27,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
 
 app.Run();
