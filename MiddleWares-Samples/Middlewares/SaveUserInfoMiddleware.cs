@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 namespace MiddleWares_Samples.Middlewares
 {
     // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
-    public class SaveUserInfo
+    public class SaveUserInfoMiddleware
     {
         private readonly RequestDelegate _next;
 
-        public SaveUserInfo(RequestDelegate next)
+        public SaveUserInfoMiddleware(RequestDelegate next)
         {
             _next = next;
         }
@@ -31,10 +31,10 @@ namespace MiddleWares_Samples.Middlewares
     // Extension method used to add the middleware to the HTTP request pipeline.
     public static class SaveUserInfoExtensions
     {
-        public static IApplicationBuilder UseSaveUserInfo(this IApplicationBuilder builder)
+        public static IApplicationBuilder UseSaveUserInfoMiddleware(this IApplicationBuilder builder)
         {
             //This is the Calling MiddleWare that Self is running in a class named UseSaveUserInfo (u can use this in Program.CS)
-            return builder.UseMiddleware<SaveUserInfo>();
+            return builder.UseMiddleware<SaveUserInfoMiddleware>();
         }
     }
 }

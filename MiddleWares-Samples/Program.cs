@@ -15,7 +15,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-//app.UseSaveUserInfo();
+//app.UseSaveUserInfoMiddleware();
 
 app.UseHttpsRedirection();
 
@@ -24,7 +24,7 @@ app.UseStaticFiles();
 app.UseRouting();
 //app.UseCircuitMiddleware(); 
 //app.UseContentMiddleware();
-
+//app.UseRequestEditMiddleware();
 app.UseAuthorization();
 
 app.MapControllerRoute(
