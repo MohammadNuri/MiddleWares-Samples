@@ -22,7 +22,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+//app.UseCircuitMiddleware(); 
 //app.UseContentMiddleware();
 
 app.UseAuthorization();
