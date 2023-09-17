@@ -1,4 +1,4 @@
-using MiddleWares_Samples;
+using MiddleWares_Samples.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,19 +15,20 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseSaveUserInfo();
+//app.UseSaveUserInfo();
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
+
+//app.UseContentMiddleware();
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-
 
 app.Run();
