@@ -25,6 +25,7 @@ app.UseRouting();
 //app.UseCircuitMiddleware(); 
 //app.UseContentMiddleware();
 //app.UseRequestEditMiddleware();
+//app.UseResponseMiddleware();
 app.UseAuthorization();
 
 app.MapControllerRoute(
